@@ -1,4 +1,4 @@
-mport montecarlo
+import montecarlo
 
 a = montecarlo.montecarlo()
 a.diffusion_tree()
