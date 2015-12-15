@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Look at BS_Life UI</title>
+</head>
+<body>
+<p>Calculate Diffusivity From</p>
+<p>
+<img id="myImage" onclick="changeImage()" src="pic_bulboff.gif" width="10" height="18">manual entry
+<img id="myImage2" onclick="changeImage2()" src="pic_bulboff.gif" width="10" height="18">rapid permeability
+<img id="myImage3" onclick="changeImage3()" src="pic_bulboff.gif" width="10" height="18">concrete parameters</p>
+<p id="diffusivity1"></p>
+<p id="diffusivity2"></p>
+<p id="diffusivity3"></p>
+<script>
+function changeImage() {
+    var image = document.getElementById('myImage');
+    var image2 = document.getElementById('myImage2');
+    var image3 = document.getElementById('myImage3');
+    if (image.src.match("bulboff")) {
+        image.src = "pic_bulbon.gif";
+        image2.src = "pic_bulboff.gif";
+        image3.src = "pic_bulboff.gif";
+        document.getElementById("diffusivity1").innerHTML =  "Diffusivity Mean";
+        document.getElementById("diffusivity2").innerHTML =  "Diffusivity Standard Deviation";
+        document.getElementById("diffusivity3").innerHTML = "";
+    }
+}
+</script>
+<script>
+function changeImage2() {
+    var image = document.getElementById('myImage');
+    var image2 = document.getElementById('myImage2');
+    var image3 = document.getElementById('myImage3');
+    if (image2.src.match("bo")) {
+        image.src = "pic_bulboff.gif";
+        image2.src = "pic_bulbon.gif";
+        image3.src = "pic_bulboff.gif";
+        document.getElementById("diffusivity1").innerHTML = "Coulombs";
+        document.getElementById("diffusivity2").innerHTML = "Coulombs Standard Deviation";
+        document.getElementById("diffusivity3").innerHTML =  "";
+    }
+}
+</script>
+<script>
+function changeImage3() {
+    var image = document.getElementById('myImage');
+    var image2 = document.getElementById('myImage2');
+    var image3 = document.getElementById('myImage3');
+    if (image3.src.match("bulboff")) {
+        image.src = "pic_bulboff.gif";
+        image2.src = "pic_bulboff.gif";
+        image3.src = "pic_bulbon.gif";
+        document.getElementById("diffusivity1").innerHTML = "Cement Factor";
+        document.getElementById("diffusivity2").innerHTML = "Water to Cement Ratio";
+        document.getElementById("diffusivity3").innerHTML = "Pozzolan Addition";
+    }
+}
+</script>
+</body>
+</html>
